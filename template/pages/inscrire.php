@@ -6,7 +6,7 @@
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inputNom">Nom</label>
-        <input type="text" name="nom" class="form-control" id="inputNom" required>
+        <input type="text" name="nom" class="form-control" id="inputNom" required autofocus>
       </div>
       <div class="form-group col-md-6">
         <label for="inputPrenom">Prénom</label>
@@ -21,14 +21,14 @@
       </div>
       <div class="form-group col-md-6">
         <label for="inputEmail">Mail</label>
-        <input type="email" name="mail" class="form-control" id="inputEmail" placeholder="Email" required>
+        <input type="email" name="mail" class="form-control" id="inputEmail" placeholder="Email" required >
       </div>
     </div>
 
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inputPassword">Mot de Passe</label>
-        <input type="password" name="motdepasse" class="form-control" id="inputPassword" placeholder="Mot de passe" required>
+        <input type="password" name="motdepasse" class="form-control" id="inputPassword" placeholder="Mot de passe" required autocomplete="new-password">
       </div>
 
       <div class="form-group col-md-6">

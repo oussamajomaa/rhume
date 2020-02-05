@@ -1,22 +1,10 @@
-window.addEventListener('load',()=>{
-   document.getElementById('inputNom').focus();
-})
 
-function verifier(ele1, ele2,ele3) {
+function verifier(ele1, ele2) {
     let pass1 = document.getElementById(ele1);
     let pass2 = document.getElementById(ele2);
-    let inputAddress=document.getElementById(ele3);
-    inputAddress.addEventListener('focus', () => {
+    pass2.addEventListener('blur', () => {
         if (pass2.value != pass1.value) {
-            pass2.focus();
-            
-            alert ('Mot de passe non identique');
-            inputAddress.style.borderColor='#ced4da';
             pass2.style.borderColor='red';
-
-        }
-        else {
-            pass2.blur();
         }
     })
 }
@@ -47,6 +35,6 @@ reset.addEventListener('click',()=>{
 
 
 inputValid('.form-control');
-verifier('inputPassword', 'inputPasswordC','inputAddress');
+verifier('inputPassword', 'inputPasswordC');
 
 

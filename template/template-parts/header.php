@@ -48,9 +48,16 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?page=qui_sommes">QUI SOMMES-NOUS</a>
                 </li>
+                <?php
+                if (!empty($_SESSION["login"])){
+                ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">PANIER</a>
+                    <a class="nav-link" href="index.php?page=panier">PANIER</a>
                 </li>
+                <?php
+                }
+               
+                ?>
                 <!-- <li class="nav-item">
                     <a class="nav-link" href="inscrire.php">S'INSCRIRE</a>
                 </li>
@@ -64,22 +71,20 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <?php
 
-                        if(!empty($_SESSION["login"])){
-                            ?>
-                            <a class="dropdown-item" href="index.php?page=gererCompte">Gerer mon compte</a>
-
-                            <?php
-
-                           
-
-                        }else{
-                            ?>
+                        if (!empty($_SESSION["login"])) {
+                        ?>
+                            <a class="dropdown-item" href="index.php?page=profil">GERER MON COMPTE</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="index.php?page=deconnecter">DECONNECTER</a>
+                        <?php
+                        } else {
+                        ?>
                             <a class="dropdown-item" href="index.php?page=connecter">SE CONNECTER</a>
-                            <?php
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="index.php?page=inscrire">S'INSCRIRE</a>
+                        <?php
                         }
                         ?>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="index.php?page=inscrire">S'INSCRIRE</a>
                         <!-- <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Something else here</a> -->
                     </div>
@@ -88,14 +93,16 @@
                     <a class="nav-link disabled" href="#">Disabled</a>
                 </li> -->
             </ul>
-            <?php
-            if (!empty($_SESSION['login'])) {
-                echo "<h3>Bienvenue </h3>" . $_SESSION['login'];
-            }
-            ?>
+
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Chercher" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="submitChercher">Chercher</button>
             </form>
         </div>
     </nav>
+    <?php
+    if (!empty($_SESSION['login'])) {
+        echo "<h5 style='color: green; font-weight:bold'>Bienvenue  " . $_SESSION['login'] .". Votre ID est: ".$_SESSION['idclient']."</h5>";
+        // echo $_SESSION['idclient'];
+    }
+    ?>

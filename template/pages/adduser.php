@@ -1,6 +1,5 @@
 <?php
 if (isset($_POST['submitInsert'])) { 
-  // $pdo = new PDO('mysql:host=localhost;dbname=rhum;charset=utf8', 'step25', 'step25');
   $mail = $_POST["mail"];
   $sql = $pdo->prepare('SELECT mail FROM Client where mail=:mail');
   insertChamps($sql, $mail, ':mail');
