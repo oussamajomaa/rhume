@@ -44,9 +44,7 @@ $res = $sql->fetchAll(PDO::FETCH_ASSOC);
 echo '<div class="container">';
 echo '<div class="row">';
 
-
 $i = 0;
-
 while ($i < count($res)) { ?>
 
   <div class="col-sm-4">
@@ -58,9 +56,9 @@ while ($i < count($res)) { ?>
         <form action="index.php?page=panier&idproduit=<?= $res[$i]['idproduit'] ?>" method="POST">
           <div class="form-group">
             <label for="qtePanier">Saisir la quantité</label>
-            <input type="number" min=0 id="qtePanier" value="0" class="form-control" name="qte">
+            <input type="number" min=1 id="qtePanier" value="1" class="form-control" name="qte">
           </div>
-          <input type="submit" name="ajoutPanierSubmit" class="btn btn-primary cardButton" value="AJOUTER AU PANIER">
+          <button type="submit" name="ajoutPanierSubmit" class="btn btn-success cardButton" id="ajoutPanierSubmit">+<img src="<?= img ?>panier.png" alt=""></button>
         </form> 
       </div>
     </div>
@@ -73,6 +71,8 @@ while ($i < count($res)) { ?>
 
 </div>
 </div>
+
+
 
 
 

@@ -21,7 +21,7 @@
       </div>
       <div class="form-group col-md-6">
         <label for="inputEmail">Mail</label>
-        <input type="email" name="mail" class="form-control" id="inputEmail" placeholder="Email" required >
+        <input type="email" name="mail" class="form-control" id="inputEmail" placeholder="Email" required>
       </div>
     </div>
 
@@ -52,10 +52,6 @@
         <label for="inputCity">Ville</label>
         <input type="text" name="ville" class="form-control" id="inputCity" required>
       </div>
-      <!-- <div class="form-group col-md-2">
-        <label for="inputCode">Code Postal</label>
-        <input type="text" name="codepostal" class="form-control" id="inputCode">
-      </div> -->
       <div class="form-group col-md-6">
         <label for="inputPays">Pays</label>
         <input type="text" name="pays" class="form-control" id="inputPays" required>
@@ -74,7 +70,7 @@
 
 <?php
 // if (isset($_POST['submitInsert'])) {
- 
+
 //   $pdo = new PDO('mysql:host=localhost;dbname=rhum;charset=utf8', 'step25', 'step25');
 //   $mail = $_POST["mail"];
 //   $sql = $pdo->prepare('SELECT mail FROM Client where mail=:mail');
@@ -103,4 +99,3 @@
 // }
 
 ?>
-

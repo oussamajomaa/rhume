@@ -40,7 +40,9 @@
 //   $res = ["success" => $success, "msg" => $msg];
 //   echo json_encode($res);
 
-
+// if ($_SESSION){
+//   $_SESSION['err']="";
+// }
 if (isset($_POST['submitConnect'])) {
   $mail = $_POST["mail"];
   $pass = trim(htmlspecialchars($_POST["pass"]));
@@ -52,7 +54,7 @@ if (isset($_POST['submitConnect'])) {
   $res = $sql->fetch(PDO::FETCH_OBJ);
 
   if (!$res) {
-    $_SESSION['err']= 'Utilisateur non trouvé';
+    $_SESSION['err']= 'Identifiant ou Mot de Passe est Incorrect';
     header('location:index.php?page=connecter');
   } else {
     $motdepasse = $res->motdepasse;
@@ -62,7 +64,7 @@ if (isset($_POST['submitConnect'])) {
       $_SESSION['idclient'] = $res->idClient;
       header("Location:index.php?page=accueil");
     } else {
-      $_SESSION['err']= 'Mot de Passe Incorrect';
+      $_SESSION['err']= 'Identifiant ou Mot de Passe est Incorrect';
       header('location:index.php?page=connecter');
     }
   }

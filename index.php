@@ -5,7 +5,7 @@
 session_start();
 include 'config/config.php';
 include 'template/template-parts/header.php';
-include 'assets/fonction/fonctionSql.php';
+
 
 
 if (isset($_GET['page']) && !empty($_GET["page"])) {
@@ -16,6 +16,7 @@ if (isset($_GET['page']) && !empty($_GET["page"])) {
 else {
     include 'template/pages/accueil.php';
 }
+
 
 include 'template/template-parts/footer.php';
 ?>

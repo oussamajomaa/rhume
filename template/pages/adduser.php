@@ -22,6 +22,8 @@ if (isset($_POST['submitInsert'])) {
     // insertChamps($sql, $_POST['codepostal'], ':codepostal');
     insertChamps($sql, $_POST['pays'], ':pays');
     $sql->execute();
+    header('location: index.php?page=connecter');
+
   }
 }
 header('location: index.php?page=inscrire');
